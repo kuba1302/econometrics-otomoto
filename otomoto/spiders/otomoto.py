@@ -63,7 +63,7 @@ class OtomotoSpider(scrapy.Spider):
         except IndexError:
             print(f"INDEX ERROR ERROR_COUNT")
 
-        next_page = f"https://www.otomoto.pl/osobowe/{self.brand}/page={self.page_number}"
+        next_page = f"https://www.otomoto.pl/osobowe/{self.brand}?page={self.page_number}"
         print(response.request.url)
         if self.page_number <= self.max_sites:
             OtomotoSpider.page_number += 1  

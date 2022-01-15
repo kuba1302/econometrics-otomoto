@@ -1,7 +1,7 @@
 from scrapy.crawler import CrawlerProcess
 from otomoto.spiders.otomoto import OtomotoSpider
 import os
-
+from time import sleep
 
 process = CrawlerProcess(settings={
     "FEEDS": {
@@ -55,7 +55,9 @@ car_brands = {
 def scrape_otomoto(brand_dict): 
     for brand, max_sites in brand_dict.items():
         print(f'STARTING {brand} SCRAPER')
-        os.system(f"scrapy crawl -L WARNING otomoto -a brand={brand} -a max_sites={max_sites} -o data.csv")
+        os.system(f"scrapy crawl -L WARNING otomoto -a brand={brand} -a max_sites={max_sites} -o df.csv") 
+        sleep(5)
+        
 
 if __name__ == '__main__':
     scrape_otomoto(car_brands)
