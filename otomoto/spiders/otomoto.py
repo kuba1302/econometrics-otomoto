@@ -52,14 +52,15 @@ class OtomotoSpider(scrapy.Spider):
             for car_page in final_links:
                 yield response.follow(car_page, self.parse_car_page, dont_filter=True)
 
-
         except IndexError:
-            print(f"INDEX ERROR ERROR_COUNT")
+            print(f"INDEX ERROR")
 
-        next_page = f"https://www.otomoto.pl/osobowe/{self.brand}?page={self.page_number}"
+        next_page = (
+            f"https://www.otomoto.pl/osobowe/{self.brand}?page={self.page_number}"
+        )
         print(response.request.url)
         if self.page_number <= self.max_sites:
-            OtomotoSpider.page_number += 1  
+            OtomotoSpider.page_number += 1
             yield response.follow(next_page, self.parse, dont_filter=True)
 
     def parse_car_page(self, response):

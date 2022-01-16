@@ -1,30 +1,14 @@
-scrapy-otomoto
+WNE Econometrics project - Analysis of otomoto car prices
 ==============
 
-This program allows you to fetch all cars from otomoto.pl
+Scraping script was based on https://github.com/dolohow/scrapy-otomoto, yet it needed lots of changes of otomoto website. 
+
 
 
 ## Installation
 ```
-python -m venv venv
-. venv/bin/activate
+python3 -m venv venv/
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
-```
-scrapy crawl -L WARNING otomoto -o otomoto.json
-```
-
-This will generate `otomoto.json` file with all cars that are currently
-available.  You can further investigate them or create some analysis.
-
-
-For some interesting applications check out this:
-http://prokulski.net/index.php/2018/01/23/sprzedam-opla/
-
-
-## Post scriptum
-This suppose to be analysis repository for buying used car, but I found one
-quickly, so...  Maybe some day.
-# econometrics-otomoto
