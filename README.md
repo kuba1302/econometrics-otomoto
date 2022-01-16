@@ -1,7 +1,7 @@
 WNE Econometrics project - Analysis of otomoto car prices
 ==============
 
-Scraping script was based on https://github.com/dolohow/scrapy-otomoto, yet it needed lots of changes of otomoto website. 
+Scraping script was based on https://github.com/dolohow/scrapy-otomoto, yet it needed lots of changes due to otomoto website changes. 
 
 
 
