@@ -39,13 +39,6 @@ class OtomotoSpider(scrapy.Spider):
         self.brand = brand
         self.max_sites = int(max_sites)
 
-    # def parse(self, response):
-    #     for brand, max_sites in self.car_brands.items():
-    #         base_page = f"https://www.otomoto.pl/osobowe/{brand}/page=0"
-    #         self.current_brand = brand
-    #         self.max_sites = max_sites
-    #         yield response.follow(base_page, self.parse_brand, dont_filter=True)
-
     def parse(self, response):
         print(f"BRAND: {self.brand} PAGE_NUMBER: {self.page_number}")
         try:
